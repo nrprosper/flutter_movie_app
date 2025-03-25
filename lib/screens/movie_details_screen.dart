@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:movie_app/colors.dart';
 import 'package:movie_app/common/image_cache_widget.dart';
 import 'package:movie_app/components/badge_pill.dart';
-import 'package:movie_app/components/movie_card.dart';
+import 'package:movie_app/components/recom_movie_card.dart';
 import 'package:movie_app/data/movie_details.dart';
 import 'package:movie_app/services/tmdb_service.dart';
 import 'package:shimmer/shimmer.dart';
@@ -266,7 +266,7 @@ Widget _buildMovieDetails(BuildContext context, AsyncSnapshot<MovieDetails> snap
                   separatorBuilder: (_, __) => const SizedBox(width: 16),
                   itemBuilder: (_, index) {
                     final movie = recommendations[index];
-                    return MovieCard(movie: movie);
+                    return RecomMovieCard(movie: movie);
                   },
                 ),
               );

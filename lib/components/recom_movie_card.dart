@@ -3,9 +3,9 @@ import 'package:movie_app/data/movie.dart';
 import '../common/image_cache_widget.dart';
 import '../screens/movie_details_screen.dart';
 
-class MovieCard extends StatelessWidget {
+class RecomMovieCard extends StatelessWidget {
   final Movie movie;
-  const MovieCard({super.key, required this.movie});
+  const RecomMovieCard({super.key, required this.movie});
 
   @override
   Widget build(BuildContext context) {
