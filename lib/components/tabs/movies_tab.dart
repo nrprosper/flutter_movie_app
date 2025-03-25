@@ -53,7 +53,6 @@ Widget _buildMovies(AsyncSnapshot<List<Movie>> snapshot) {
 
   final movies = snapshot.data!;
   return GridView.builder(
-    // Your actual movie grid implementation
     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
       crossAxisCount: 2,
       childAspectRatio: 0.7,

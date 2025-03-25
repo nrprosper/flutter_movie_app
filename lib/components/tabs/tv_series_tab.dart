@@ -51,7 +51,6 @@ Widget _buildSeries(AsyncSnapshot<List<TvSeries>> snapshot) {
 
   final series = snapshot.data!;
   return GridView.builder(
-    // Your actual movie grid implementation
     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
       crossAxisCount: 2,
       childAspectRatio: 0.7,
