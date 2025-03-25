@@ -4,7 +4,7 @@ abstract class Media {
   final List<int> genreIds;
   final int id;
   final String originalLanguage;
-  final String overview;
+  final String? overview;
   final double popularity;
   final String posterPath;
   final String? mediaType;
@@ -17,7 +17,7 @@ abstract class Media {
     required this.genreIds,
     required this.id,
     required this.originalLanguage,
-    required this.overview,
+    this.overview,
     required this.popularity,
     required this.posterPath,
     this.mediaType,
