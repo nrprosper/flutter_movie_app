@@ -19,7 +19,7 @@ class _MLayoutState extends State<MLayout> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: NavigationBar(
-          height: 60,
+          height: 80,
           backgroundColor: MColors.themeBlack,
           selectedIndex: currentPageIdx,
           overlayColor: WidgetStateProperty.all(Colors.transparent),
