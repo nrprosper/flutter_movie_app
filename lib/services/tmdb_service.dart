@@ -5,13 +5,14 @@ import 'package:movie_app/data/trending_response.dart';
 import 'package:movie_app/data/tv_response.dart';
 
 import '../data/movie_response.dart';
+import '../data/tv_details.dart';
 
 class TmdbService {
 
   static final Dio _dio = Dio(BaseOptions(
     baseUrl: 'https://api.themoviedb.org/3/',
-    connectTimeout: const Duration(seconds: 5),
-    receiveTimeout: const Duration(seconds: 3),
+    connectTimeout: const Duration(seconds: 120),
+    receiveTimeout: const Duration(seconds: 120),
   ));
 
   static String? _apiKey;
@@ -93,6 +94,11 @@ class TmdbService {
       'movie/$movieId/recommendations',
     );
     return MovieResponse.fromJson(response.data);
+  }
+
+  Future<TvDetails> getTvDetails(int tvId) async {
+    final response = await _dio.get('tv/$tvId');
+    return TvDetails.fromJson(response.data);
   }
 
 
