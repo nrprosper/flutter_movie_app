@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/data/movie.dart';
 import 'package:movie_app/data/tv_series.dart';
+import 'package:movie_app/screens/tv_details_screen.dart';
 
 import '../../common/image_cache_widget.dart';
 import '../../screens/movie_details_screen.dart';
@@ -21,7 +22,10 @@ class MovieItem extends StatelessWidget {
       onTap: () => {
         Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => MovieDetailsScreen(movie: movie!,)))
+            MaterialPageRoute(builder: (context) => isMovie
+            ? MovieDetailsScreen(movie: movie!)
+            : TvDetailsScreen(tv: tv!))
+        )
       },
       child: SizedBox(
         width: 220,
@@ -30,7 +34,7 @@ class MovieItem extends StatelessWidget {
           children: [
             Expanded(
               child: ClipRRect(
-                borderRadius: BorderRadius.circular(8),
+                borderRadius: BorderRadius.circular(24),
                 child: TmdbImage(
                   imagePath: posterPath ?? '',
                   width: double.infinity,
