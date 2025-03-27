@@ -1,3 +1,9 @@
+import 'package:movie_app/data/production_spoken_language.dart';
+
+import 'genre.dart';
+import 'movie/collection.dart';
+import 'movie/production_company.dart';
+
 class MovieDetails {
   final bool adult;
   final String? backdropPath;
@@ -95,106 +101,6 @@ class MovieDetails {
       video: json['video'] ?? false,
       voteAverage: json['vote_average']?.toDouble() ?? 0.0,
       voteCount: json['vote_count'] ?? 0,
-    );
-  }
-}
-
-class Collection {
-  final int id;
-  final String name;
-  final String? posterPath;
-  final String? backdropPath;
-
-  Collection({
-    required this.id,
-    required this.name,
-    this.posterPath,
-    this.backdropPath,
-  });
-
-  factory Collection.fromJson(Map<String, dynamic> json) {
-    return Collection(
-      id: json['id'],
-      name: json['name'],
-      posterPath: json['poster_path'],
-      backdropPath: json['backdrop_path'],
-    );
-  }
-}
-
-class Genre {
-  final int id;
-  final String name;
-
-  Genre({
-    required this.id,
-    required this.name,
-  });
-
-  factory Genre.fromJson(Map<String, dynamic> json) {
-    return Genre(
-      id: json['id'],
-      name: json['name'],
-    );
-  }
-}
-
-class ProductionCompany {
-  final int id;
-  final String? logoPath;
-  final String name;
-  final String originCountry;
-
-  ProductionCompany({
-    required this.id,
-    this.logoPath,
-    required this.name,
-    required this.originCountry,
-  });
-
-  factory ProductionCompany.fromJson(Map<String, dynamic> json) {
-    return ProductionCompany(
-      id: json['id'],
-      logoPath: json['logo_path'],
-      name: json['name'],
-      originCountry: json['origin_country'],
-    );
-  }
-}
-
-class ProductionCountry {
-  final String iso31661;
-  final String name;
-
-  ProductionCountry({
-    required this.iso31661,
-    required this.name,
-  });
-
-  factory ProductionCountry.fromJson(Map<String, dynamic> json) {
-    return ProductionCountry(
-      iso31661: json['iso_3166_1'],
-      name: json['name'],
-    );
-  }
-}
-
-class SpokenLanguage {
-  final String englishName;
-  final String iso6391;
-  final String name;
-
-  SpokenLanguage({
-    required this.englishName,
-    required this.iso6391,
-    required this.name,
-  });
-
-  factory SpokenLanguage.fromJson(Map<String, dynamic> json) {
-    return SpokenLanguage(
-      englishName: json['english_name'],
-      iso6391: json['iso_639_1'],
-      name: json['name'],
     );
   }
 }
