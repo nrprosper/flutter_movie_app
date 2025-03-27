@@ -101,6 +101,10 @@ class TmdbService {
     return TvDetails.fromJson(response.data);
   }
 
+  Future<TvSeriesResponse> getTvRecommendations(int tvId) async {
+    final response = await _dio.get('tv/$tvId/recommendations');
+    return TvSeriesResponse.fromJson(response.data);
+  }
 
 
 }
