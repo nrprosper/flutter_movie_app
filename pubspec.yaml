@@ -19,6 +19,9 @@ dependencies:
   flutter_dotenv: ^5.2.1
   cached_network_image: ^3.4.1
   shimmer: ^3.0.0
+  chewie: ^1.11.0
+  video_player: ^2.9.5
+  webview_flutter: ^4.10.0
 
 dev_dependencies:
   flutter_test:
